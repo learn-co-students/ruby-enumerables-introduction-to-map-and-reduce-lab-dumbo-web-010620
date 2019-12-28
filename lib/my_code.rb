@@ -70,16 +70,16 @@ end
 
 def reduce_to_any_true(source_array)
   counter = 0 
-  true_array = []
+  false_array = []
   while counter < source_array.length
-   if source_array[counter] == true
-     true_array << source_array[counter]
+   if source_array[counter] != true
+     false_array << source_array[counter]
    end 
    counter += 1
   end  
-  if true_array.length >= 1
-    return true
-  else
+  if false_array.length == source_array.length 
     return false
+  else
+    return true
   end   
 end   
